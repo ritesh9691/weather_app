@@ -37,16 +37,19 @@ async function getWeatherData(cityValue) {
       ".icon"
     ).innerHTML = `<img src="http://openweathermap.org/img/wn/${icon}.png" alt="weather Icon" height="200" width="200" >`;
 
-    // const details = document.getElementById("details");
-    // console.log("details", details.innerText);
-    const humidity = document.getElementById("humidity");
-    humidity.textContent = `humidity : ${data.main.humidity} %`;
+    // const details = [
+    //   (humidity = data.main.humidity),
+    //   (windSpeed = data.wind.speed),
+    //   (feelsLike = data.main.feels_like),
+    // ];
+
+   
+     const humidity = document.getElementById("humidity");
+     humidity.textContent = `humidity : ${data.main.humidity} %`
     const wind = document.getElementById("wind");
-    wind.textContent = `wind speed : ${data.wind.speed} m/s`;
+    wind.textContent = `wind speed : ${data.wind.speed} m/s`
 
     const feelsElement = document.getElementById("feels");
-    feelsElement.textContent = `feels like : ${Math.round(
-      data.main.feels_like
-    )} ℃`;
+    feelsElement.textContent = `feels like : ${Math.round(data.main.feels_like)} ℃`
   } catch (error) {}
 }
