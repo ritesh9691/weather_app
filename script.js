@@ -37,8 +37,8 @@ async function getWeatherData(cityValue) {
       ".icon"
     ).innerHTML = `<img src="http://openweathermap.org/img/wn/${icon}.png" alt="weather Icon" height="200" width="200" >`;
 
-    const details = document.getElementById("details");
-    console.log("details", details.innerText);
+    // const details = document.getElementById("details");
+    // console.log("details", details.innerText);
     const humidity = document.getElementById("humidity");
     humidity.textContent = `humidity : ${data.main.humidity} %`;
     const wind = document.getElementById("wind");
