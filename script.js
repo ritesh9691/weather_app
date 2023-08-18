@@ -51,5 +51,23 @@ async function getWeatherData(cityValue) {
 
     const feelsElement = document.getElementById("feels");
     feelsElement.textContent = `feels like : ${Math.round(data.main.feels_like)} ℃`
-  } catch (error) {}
+  } catch (error) {
+    if(cityValue == ""){
+      weatherData.querySelector(".description").innerHTML = "Please enter something to search "; 
+    }
+    weatherData.querySelector(".temprature").innerHTML = ``;
+   
+    const icon = data.weather[0].icon;
+    weatherData.querySelector(
+      ".icon"
+    ).innerHTML = ``;
+    weatherData.querySelector(".description").innerHTML = "Something bad happend! ";
+    const humidity = document.getElementById("humidity");
+    humidity.textContent = `humidity :`
+   const wind = document.getElementById("wind");
+   wind.textContent = `wind speed : `
+
+   const feelsElement = document.getElementById("feels");
+   feelsElement.textContent = `feels like :`
+  }
 }
